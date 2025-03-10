@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Browse from './Browse'
 import Login from './Login'
-import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import {Routes,Route } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addUser, removeUser } from '../utils/UserSlice'
 import { onAuthStateChanged } from 'firebase/auth'
@@ -24,13 +24,11 @@ const Body = () => {
   })
   return (
     <div>
-      <BrowserRouter>
       <Routes>
         <Route path='/' element={<Login/>}/>
         <Route path='/browse' element={<Browse/>}/>
         <Route path='/player/:id' element={<Player/>}/>
       </Routes>
-      </BrowserRouter>
     </div>
   )
 }
